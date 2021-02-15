@@ -2,24 +2,30 @@
 
 Transfers the Hass.io backups to a remote rsync server.
 
-## Instalation
-
-Download and place files in `rsync_backups` directory in  `addons` of Home Assistant.
-Files from this repository should be in the `[homeassistant]/addons/rsync_backups`.
-
 ## Configuration
 
 This section describes each of the add-on configuration options.
 
 Example add-on configuration:
 
+```yaml
+server: rsync-server
+port: 22
+directory: ~/hassio-backups
+username: user
+password: password
+auto_purge: 0
 ```
-"server": "rsync-server",
-"port": 22,
-"directory": "~/hassio-backups",
-"username": "user",
-"password": "password",
-"auto_purge": 0
+
+or you can use also `!secret` eg.: (edit configuration in YAML):
+
+```yaml
+server: rsync-server
+port: 22
+directory: ~/hassio-backups
+username: user
+password: '!secret rsync_backups_password'
+auto_purge: 0
 ```
 
 ### Option: `server` (required)
@@ -64,5 +70,5 @@ Run addon in the automation, example automation below:
     - delay: '00:10:00'
     - service: 'hassio.addon_start'
       data:
-        addon: 'local_rsync_backups'
+        addon: '2caa1d32_rsync_backups' # you can get the addon id from URL when you go to the addon info
 ```

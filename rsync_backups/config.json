@@ -1,9 +1,9 @@
 {
   "name": "Rsync Backups",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "slug": "rsync_backups",
   "description": "Transfers the Hass.io backups to a remote rsync server.",
-  "url": "https://github.com/tykarol/homeassistant-addon-rsync-backup",
+  "url": "https://github.com/tykarol/hassio-addons",
   "startup": "once",
   "boot": "manual",
   "arch": [
