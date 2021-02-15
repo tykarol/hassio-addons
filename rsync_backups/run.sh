@@ -16,7 +16,7 @@ rsyncurl="$username@$server:$directory"
 echo "[Info] Start rsync-backups"
 
 echo "[Info] Start rsync backups to $rsyncurl"
-sshpass -p $password rsync -av -e 'ssh -p 22 -o StrictHostKeyChecking=no' /backup/ $rsyncurl
+sshpass -p $password rsync -av -e "ssh -p $port -o StrictHostKeyChecking=no" /backup/ $rsyncurl
 
 if [ $auto_purge -ge 1 ]; then
 	echo "[Info] Start auto purge, keep last $auto_purge backups"
