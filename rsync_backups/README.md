@@ -62,7 +62,7 @@ Run addon in the automation, example automation below:
     platform: 'time'
     at: '3:00:00'
   action:
-    - service: 'hassio.snapshot_full'
+    - service: 'hassio.backup_full'
       data_template:
         name: "Automated Backup {{ now().strftime('%Y-%m-%d') }}"
         password: !secret hassio_snapshot_password
